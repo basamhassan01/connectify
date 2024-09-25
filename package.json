@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "api/server.js",
   "scripts": {
-    "dev": "nodemon api/server.js",
-    "start": "node api/server.js"
+    "dev": "NODE_ENV=development nodemon api/server.js",
+    "start": "cross-env NODE_ENV=production node api/server.js",
+    "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.4",
     "postcss": "^8.4.44"
   }
